@@ -33,66 +33,65 @@ const projects = [
   }
 ];
 
-
 const Projects = () => {
   return (
     <motion.section 
       initial={{ opacity: 0, x: 200 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 1 }}
-     viewport={{ once: false, amount: 0.3 }}
-
+      viewport={{ once: false, amount: 0.3 }}
       id="projects"
       className="max-w-6xl mx-auto px-4 py-12 min-h-screen w-full mb-16 scroll-mt-20"
     >
-      <h2 className="text-6xl font-bold text-[#4EC3FF] mb-16 text-center">PROJECTS</h2>
+      <h2 className="text-4xl sm:text-6xl font-bold text-[#4EC3FF] mb-16 text-center">
+        PROJECTS
+      </h2>
 
-      <div className="grid gap-10 sm:grid-cols-2 m-4 py-12">
-       {projects.map(({ title, description, tech, live, github }, index) => (
-  <motion.div
-    key={index}
-    whileTap={{ y: 6, scale: 0.98 }}
-    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-    className="group bg-[#121212] rounded-2xl p-6 m-8 shadow-md border border-[#2c2c2c] hover:border-[#4EC3FF] hover:shadow-lg transform hover:scale-[1.03] transition duration-300 ease-in-out"
-  >
-    <h3 className="text-2xl font-semibold text-white group-hover:text-[#4EC3FF] mb-4">
-      {title}
-    </h3>
+      <div className="grid gap-10 sm:grid-cols-2 px-4">
+        {projects.map(({ title, description, tech, live, github }, index) => (
+          <motion.div
+            key={index}
+            whileTap={{ y: 6, scale: 0.98 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="group bg-[#121212] rounded-2xl p-6 shadow-md border border-[#2c2c2c] hover:border-[#4EC3FF] hover:shadow-lg transform hover:scale-[1.03] transition duration-300 ease-in-out w-full max-w-md mx-auto"
+          >
+            <h3 className="text-2xl font-semibold text-white group-hover:text-[#4EC3FF] mb-4">
+              {title}
+            </h3>
 
-    <p className="text-gray-300 text-sm mb-5">{description}</p>
+            <p className="text-gray-300 text-sm mb-5">{description}</p>
 
-    <div className="flex flex-wrap gap-2 mb-6">
-      {tech.map((t, i) => (
-        <span
-          key={i}
-          className="bg-[#1f1f1f] text-sm text-white px-3 py-1 rounded-full"
-        >
-          {t}
-        </span>
-      ))}
-    </div>
+            <div className="flex flex-wrap gap-2 mb-6">
+              {tech.map((t, i) => (
+                <span
+                  key={i}
+                  className="bg-[#1f1f1f] text-sm text-white px-3 py-1 rounded-full"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
 
-    <div className="flex gap-6">
-      <a
-        href={live}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-[#4EC3FF] hover:underline flex items-center gap-1"
-      >
-        Live <FaExternalLinkAlt size={14} />
-      </a>
-      <a
-        href={github}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-[#4EC3FF] hover:underline flex items-center gap-1"
-      >
-        GitHub <FaGithub size={16} />
-      </a>
-    </div>
-  </motion.div>
-))}
-
+            <div className="flex gap-6">
+              <a
+                href={live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#4EC3FF] hover:underline flex items-center gap-1"
+              >
+                Live <FaExternalLinkAlt size={14} />
+              </a>
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#4EC3FF] hover:underline flex items-center gap-1"
+              >
+                GitHub <FaGithub size={16} />
+              </a>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </motion.section>
   );

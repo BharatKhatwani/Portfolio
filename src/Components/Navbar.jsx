@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -142,16 +144,25 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="absolute top-full left-0 w-full bg-[#121212] flex flex-col items-center py-5 space-y-4 md:hidden">
-          <span onClick={() => { setMenuOpen(false); goToSection('home'); }} className="text-white text-lg hover:text-[#4EC3FF] cursor-pointer">Home</span>
-          <Link to="/about" onClick={() => setMenuOpen(false)} className="text-white text-lg hover:text-[#4EC3FF]">About</Link>
-          <span onClick={() => { setMenuOpen(false); goToSection('skills'); }} className="text-white text-lg hover:text-[#4EC3FF] cursor-pointer">Skills</span>
-          <span onClick={() => { setMenuOpen(false); goToSection('projects'); }} className="text-white text-lg hover:text-[#4EC3FF] cursor-pointer">Projects</span>
-          <Link to="/experience" onClick={() => setMenuOpen(false)} className="text-white text-lg hover:text-[#4EC3FF]">Experience</Link>
-          <span onClick={() => { setMenuOpen(false); goToSection('contact'); }} className="text-white text-lg hover:text-[#4EC3FF] cursor-pointer">Contact</span>
-        </div>
-      )}
+     <AnimatePresence>
+  {menuOpen && (
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+      className="absolute top-full left-0 w-full bg-[#121212] flex flex-col items-center py-5 space-y-4 md:hidden"
+    >
+      <span onClick={() => { setMenuOpen(false); goToSection('home'); }} className="text-white text-lg hover:text-[#4EC3FF] cursor-pointer">Home</span>
+      <Link to="/about" onClick={() => setMenuOpen(false)} className="text-white text-lg hover:text-[#4EC3FF]">About</Link>
+      <span onClick={() => { setMenuOpen(false); goToSection('skills'); }} className="text-white text-lg hover:text-[#4EC3FF] cursor-pointer">Skills</span>
+      <span onClick={() => { setMenuOpen(false); goToSection('projects'); }} className="text-white text-lg hover:text-[#4EC3FF] cursor-pointer">Projects</span>
+      <Link to="/experience" onClick={() => setMenuOpen(false)} className="text-white text-lg hover:text-[#4EC3FF]">Experience</Link>
+      <span onClick={() => { setMenuOpen(false); goToSection('contact'); }} className="text-white text-lg hover:text-[#4EC3FF] cursor-pointer">Contact</span>
+    </motion.div>
+  )}
+</AnimatePresence>
+
     </div>
   );
 };

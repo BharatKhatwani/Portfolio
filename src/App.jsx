@@ -29,7 +29,7 @@ const App = () => {
   }
 
   return (
-    <>
+    <div div className='overflow-x-hidden'>
       <Navbar />
       <Suspense fallback={<div className="text-white p-10">Loading...</div>}>
         <Routes>
@@ -49,7 +49,7 @@ const App = () => {
          
         </Routes>
       </Suspense>
-    </>
+    </div>
   );
 };
 

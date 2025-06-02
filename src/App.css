@@ -8,7 +8,7 @@ html, body {
   color: #E0E0E0;
   scroll-behavior: smooth;
 
-  overflow-x: hidden;       /* <-- Added this */
+  /* overflow-x: hidden;       <-- Added this */
   width: 100vw;             /* <-- Added this */
   box-sizing: border-box;   /* <-- Added this */
 

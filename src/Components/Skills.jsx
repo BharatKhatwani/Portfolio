@@ -30,34 +30,38 @@ const skills = [
 const Skills = () => {
   return (
     <motion.section
-      initial={{ opacity: 0, x: 200 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
-     viewport={{ once: false, amount: 0.3 }}
+  initial={{ opacity: 0, x: 200 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 1 }}
+  viewport={{ once: false, amount: 0.3 }}
+  id="skills"
+  className="max-w-4xl mx-auto px-4 py-16 sm:py-24 min-h-screen w-full mb-16"
+>
+  <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#4EC3FF] mb-12 text-center">
+    Technologies
+  </h2>
+  <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
+    {skills.map(({ name, icon }, index) => (
+      <motion.div
+        key={name}
+        className="flex flex-col items-center justify-center bg-[#121212] rounded-lg p-4 sm:p-6 shadow-md hover:text-black cursor-default transition-transform duration-300 ease-in-out hover:scale-110"
+        style={{
+          minWidth: '100px',
+          flex: '1 1 100px',
+          maxWidth: '130px'
+        }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        {icon}
+        <p className="mt-2 text-white font-medium text-sm text-center">{name}</p>
+      </motion.div>
+    ))}
+  </div>
+</motion.section>
 
-      id="skills"
-      className="max-w-4xl mx-auto px-4 py-32 min-h-screen w-full mb-16"
-    >
-      <h2 className="text-6xl font-bold text-[#4EC3FF] mb-16 text-center">
-        Technologies
-      </h2>
-      <div className="flex flex-wrap justify-center gap-8">
-        {skills.map(({ name, icon }, index) => (
-          <motion.div
-            key={name}
-            className="flex flex-col items-center justify-center bg-[#121212] rounded-lg p-6 shadow-md hover:text-black cursor-default transition-transform duration-300 ease-in-out hover:scale-110"
-            style={{ minWidth: '120px', flex: '1 1 120px', maxWidth: '150px' }}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: false , amount: 0.3 }}
-          >
-            {icon}
-            <p className="mt-3 text-white font-semibold text-center">{name}</p>
-          </motion.div>
-        ))}
-      </div>
-    </motion.section>
   );
 };
 
