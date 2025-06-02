@@ -13,7 +13,9 @@ const Experience = () => {
       className="max-w-4xl w-full mx-auto px-4 sm:px-6 py-10 sm:py-12 border border-gray-700 text-gray-200 rounded-xl shadow mt-20 sm:mt-32"
     >
       <h2 className="text-center text-2xl sm:text-3xl font-semibold mb-4 text-[#4EC3FF]">
-        College Event Website
+        Bad Talk Website  <span className='text-xl'>
+          (College Event)
+          </span> 
       </h2>
 
       <hr className="border-gray-700 mb-6" />
