@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #121212;
+  color: #E0E0E0;
+  scroll-behavior: smooth;
+
+  overflow-x: hidden;       /* <-- Added this */
+  width: 100vw;             /* <-- Added this */
+  box-sizing: border-box;   /* <-- Added this */
+
+  /* Hide scrollbar globally */
+  scrollbar-width: none;    /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;            /* Chrome, Safari, Opera */
+}
+
+/* Optional: apply box-sizing globally */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
