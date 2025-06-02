@@ -19,7 +19,7 @@ const Hero = () => {
       >
         {/* Title */}
         <h1 className="text-4xl md:text-7xl font-bold mb-4 text-white">
-          I am{' '}
+         Hey, I am{' '}
           <motion.span
             className="shine bg-clip-text text-transparent bg-gradient-to-r from-[#4EC3FF] to-[#1E90FF]"
             initial={{ opacity: 0 }}
