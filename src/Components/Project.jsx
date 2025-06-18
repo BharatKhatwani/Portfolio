@@ -3,6 +3,15 @@ import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const projects = [
+
+  {
+{
+  title: 'HealthLink',
+  description: 'A full-stack hospital appointment system with role-based access, allowing patients to book and view appointments and doctors to manage bookings securely.',
+  tech: ['MongoDB', 'Express.js', 'Node.js', 'React', 'Tailwind CSS'],
+  live: 'https://hositpal-management.vercel.app',
+  github: 'https://github.com/BharatKhatwani/Hositpal_Management',
+},
   {
     title: 'URL SHORTENER',
     description: 'A full-stack URL shortener app allowing users to register, log in, and generate short links with redirection. Built with MERN stack.',
